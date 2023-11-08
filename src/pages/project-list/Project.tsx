@@ -18,8 +18,7 @@ const Project: React.FC<Props> = ({ project }) => {
   async function fetchTasks() {
     try {
       const res = await axios.get(
-        `https://task-management-heroku-0dfab14e9bc8.herokuapp.com
-        /tasks/${project?.projects_id}`
+        `https://task-management-heroku-0dfab14e9bc8.herokuapp.com/tasks/${project?.projects_id}`
       );
 
       setTasksLength(res.data.length);
