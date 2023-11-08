@@ -39,8 +39,7 @@ const Register: React.FC<Props> = ({ projects }) => {
         return;
       }
       const res = await axios.get(
-        `https://task-management-heroku-0dfab14e9bc8.herokuapp.com
-        /get-user-id/${username}/${project?.projects_id}`
+        `https://task-management-heroku-0dfab14e9bc8.herokuapp.com/get-user-id/${username}/${project?.projects_id}`
       );
       const id = res.data.userId;
       navigate(`/tasks/${projectName}/${username}/${id}`);

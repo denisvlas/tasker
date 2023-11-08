@@ -18,7 +18,7 @@ const TodoForm: React.FC<Props> = ({ todo, setTodo, project, userId }) => {
 
   const getLastId = async () => {
     try {
-      const res = await axios.get("https://task-management-heroku-0dfab14e9bc8.herokuapp.com/get-last-id");
+      const res = await axios.get("http://localhost:3001/get-last-id");
       const lastId = res.data[0]["MAX(id)"];
       setLastId(lastId);
     } catch (err) {
@@ -26,14 +26,18 @@ const TodoForm: React.FC<Props> = ({ todo, setTodo, project, userId }) => {
     }
   };
 
-  const [warning, setWarning] = useState("");
+ const [warning,setWarning]=useState('')
+
+
 
   const handleAddTask = async () => {
-    if (input.length < 1) {
-      return setWarning("Write something");
+    
+    if(input.length<1){
+      return setWarning('Write something')
     }
     try {
-      await axios.post("https://task-management-heroku-0dfab14e9bc8.herokuapp.com/add-task", {
+     
+      await axios.post("http://localhost:3001/add-task", {
         title: input,
         status: TodoStatusType.incompleted,
         description: undefined,
@@ -66,9 +70,9 @@ const TodoForm: React.FC<Props> = ({ todo, setTodo, project, userId }) => {
   return (
     <div className="add-task-section">
       <input
-        onClick={() => setWarning("")}
+        onClick={()=>setWarning('')}
         onKeyPress={handleKeyPress}
-        placeholder={`${warning ? warning : "Add a task ..."}`}
+        placeholder={`${warning?warning:'Add a task ...'}`}
         type="text"
         className="input-task"
         value={input}

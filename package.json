@@ -1,5 +1,5 @@
 {
-  "homepage": "https://denisvlas.github.io/task-management/projects",
+  "homepage": "https://denisvlas.github.io/projects",
   "name": "task-management",
   "version": "0.1.0",
   "private": true,
@@ -27,8 +27,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "node index.js",
-    "devStart": "nodemon index.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

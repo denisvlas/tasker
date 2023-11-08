@@ -26,6 +26,7 @@ const Project: React.FC<Props> = ({ project }) => {
       console.log(err);
     }
   }
+
   async function fetchUsers() {
     try {
       const res = await axios.get(
