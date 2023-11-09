@@ -27,7 +27,7 @@ return (
 <DndProvider backend={HTML5Backend}>
 
   <Routes>
-  <Route path='/projects' element={<Projects projects={projects} setProjects={setProjects}/>}/>
+  <Route path='/' element={<Projects projects={projects} setProjects={setProjects}/>}/>
   <Route path="/not-found" element={<NotFound />} />
   <Route path='/reg/:projectName' element={<Register projects={projects} />} />
   <Route path='/tasks/:projectName/:username/:userId'  element={<Main  projects={projects}/>}/>
