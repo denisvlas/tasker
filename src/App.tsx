@@ -32,7 +32,7 @@ return (
   <Route path='/reg/:projectName' element={<Register projects={projects} />} />
   <Route path='/tasks/:projectName/:username/:userId'  element={<Main  projects={projects}/>}/>
   <Route path='/login/:projectName' element={<Login projects={projects}/>}/>
-  <Route path="*" element={<Navigate to="/not-found" replace />} />
+  {/* <Route path="*" element={<Navigate to="/not-found" replace />} /> */}
   </Routes>
   </DndProvider>
   </BrowserRouter> 
